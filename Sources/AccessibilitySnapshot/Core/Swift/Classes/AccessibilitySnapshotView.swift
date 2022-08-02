@@ -911,11 +911,21 @@ private extension UIView {
 
 // MARK: -
 
+public struct ImageAssetResource {
+    /// set this to the bundle where the xcasset files are located
+    /// if it is different from the default project settings
+    public static var overrideImageAssetBundle: Bundle? = nil
+}
+
 private extension Bundle {
 
     private final class Sentinel {}
 
     static var accessibilitySnapshotResources: Bundle = {
+        if let assetBundle = ImageAssetResource.overrideImageAssetBundle {
+          return assetBundle
+        }
+
         #if SWIFT_PACKAGE
         return Bundle.module
         #else

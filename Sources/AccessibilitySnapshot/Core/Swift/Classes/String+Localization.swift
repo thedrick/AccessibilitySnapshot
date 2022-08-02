@@ -16,6 +16,12 @@
 
 import Foundation
 
+public struct LocalizationResource {
+    /// set this to the bundle where the Localizable strings files are located
+    /// if it is different from the default project settings
+    public static var overrideResourceBundle: Bundle? = nil
+}
+
 extension String {
 
     func localized(key: String, comment: String, locale: String?, file: StaticString = #file) -> String {
@@ -35,6 +41,10 @@ private enum StringLocalization {
     private static var localeToBundleMap: [String: Bundle] = [:]
 
     private static let resourceBundle: Bundle = {
+        if let overrideResourceBundle = LocalizationResource.overrideResourceBundle {
+          return overrideResourceBundle
+        }
+
         #if SWIFT_PACKAGE
         return Bundle.module
         #else
