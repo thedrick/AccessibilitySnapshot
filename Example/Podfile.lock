@@ -18,31 +18,25 @@ DEPENDENCIES:
   - AccessibilitySnapshot/Core (from `../AccessibilitySnapshot.podspec`)
   - AccessibilitySnapshot/iOSSnapshotTestCase (from `../AccessibilitySnapshot.podspec`)
   - AccessibilitySnapshot/SnapshotTesting (from `../AccessibilitySnapshot.podspec`)
-  - Paralayout (from `https://github.com/square/Paralayout`)
+  - Paralayout
   - SnapshotTesting (= 1.7.2)
 
 SPEC REPOS:
   trunk:
     - iOSSnapshotTestCase
+    - Paralayout
     - SnapshotTesting
 
 EXTERNAL SOURCES:
   AccessibilitySnapshot:
     :path: "../AccessibilitySnapshot.podspec"
-  Paralayout:
-    :git: https://github.com/square/Paralayout
-
-CHECKOUT OPTIONS:
-  Paralayout:
-    :commit: 0aaf2f7576a98258d363c853b5b6c63a40bced4f
-    :git: https://github.com/square/Paralayout
 
 SPEC CHECKSUMS:
   AccessibilitySnapshot: 1230b68542cc0d99356e7d7fddf6b6f1ba1acd77
   iOSSnapshotTestCase: 9ab44cb5aa62b84d31847f40680112e15ec579a6
-  Paralayout: f4d6727fca5b592eb93a7cc408e45404599a4b0a
+  Paralayout: e36bf8c795ed9930159b9635ebb802d026667d0b
   SnapshotTesting: 8caa6661fea7c8019d5b46de77c16bab99c36c5c
 
-PODFILE CHECKSUM: 9d965121b60425a32e1b4c884c4c6b7aff62fa52
+PODFILE CHECKSUM: 2a18c160ce2a2263453ecae237cfc3c32e0df2ed
 
 COCOAPODS: 1.11.0.rc.1
