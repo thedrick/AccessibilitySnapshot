@@ -333,8 +333,12 @@ public final class AccessibilityHierarchyParser {
             return .frame(container.convert(element.accessibilityFrameInContainerSpace, to: root))
 
         } else {
+            if element.accessibilityFrame == .zero, let view = element as? UIView {
+                return .frame(root.convert(view.bounds, from: view))
+            }
             return .frame(root.convert(element.accessibilityFrame, from: nil))
         }
+
     }
 
     /// Returns the default value for an element's `accessibilityActivationPoint`.
